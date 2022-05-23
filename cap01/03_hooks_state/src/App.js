@@ -6,6 +6,10 @@ import Fragments from './components/Fragments';
 import ListRender from './components/ListRender';
 import RenderizarCondicional from './components/RenderizarCondicional';
 import ShowUserName from './components/ShowUserName';
+import Container from './components/Container';
+import ExecuteFunction from './components/ExecuteFunction';
+import Message from './components/Message';
+import ChangeMessageState from './components/ChangeMessageState';
 
 function App() {
   //const name = "Yuri"
@@ -31,6 +35,16 @@ function App() {
     usado: true
   }]
 
+  const functionProps = () =>{
+    console.log('evento do componente pai')
+  }
+
+  const [message, setMessage] = useState()
+
+  const handleMessage = (msg) =>{
+    setMessage(msg)
+  }
+
   return (
     <div className="App">
       <ComponentsState/>
@@ -42,18 +56,30 @@ function App() {
       {/** DESTRUTURINGS */}
       <CarDetails id={10} brand="VW" km={10000} color="Branco" usado={true}/>
 
-      {/** REAPROVEITAMENTO DE COMPONENTS 
+      {/** REAPROVEITAMENTO DE COMPONENTS */}
       <CarDetails brand="FIAT" km={345222} color="Verde" usado={false}/>
       <CarDetails brand="CITROEN" km={222} color="Preto" usado={false}/>
-      <CarDetails brand="FORD" km={555} color="Azul" usado={true}/>*/}
+      <CarDetails brand="FORD" km={555} color="Azul" usado={true}/>
 
       {/** LOOP ARRAY DE OBJETOS */}
       {cars.map((car) => (
-        <CarDetails id={car.id} brand={car.brand} km={car.km} color={car.color} usado={car.usado}/>      
+        <CarDetails key={car.id} brand={car.brand} km={car.km} color={car.color} usado={car.usado}/>      
       ))}
 
       {/** FRAGMENTS */}
-      <Fragments/>
+      <Fragments fragmentData={200}/>
+
+      {/** Children Props - children*/}
+      <Container>
+        <p>E este é o conteúdo</p>
+      </Container>
+
+      {/** Executar função */}
+      <ExecuteFunction myFunction={functionProps}/>
+
+      {/** MESSAGE */}
+      <Message msg={message}/>
+      <ChangeMessageState handleMessage={handleMessage}/>
     </div>
   );
 }

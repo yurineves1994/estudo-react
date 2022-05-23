@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Fragments = () => {
+const Fragments = ({fragmentData}) => {
   return (
     <>
-        <h1>Primeiro Titulo</h1>
+        <h1>Primeiro Titulo {fragmentData}</h1>
         <h2>Segundo Titulo</h2>
     </>
   )
