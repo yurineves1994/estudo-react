@@ -6,9 +6,9 @@ export const titleColorReducer = (state, action) => {
 
     switch (action.type) {
         case "RED":
-            return { ...state, color: "red" }
+            return { ...state, color: "red", fontSize: "18px" }
         case "BLUE":
-            return { ...state, color: "blue" }
+            return { ...state, color: "blue", fontSize: "32px" }
         default:
             return state;
     }
@@ -16,7 +16,7 @@ export const titleColorReducer = (state, action) => {
 }
 
 export const TitleColorContextProvider = ({ children }) => {
-    const [state, dispatch] = useReducer(titleColorReducer, { color: 'purple' })
+    const [state, dispatch] = useReducer(titleColorReducer, { color: 'purple', fontSize: '13px' })
 
     console.log('o estado atualmente é:', state)
 
