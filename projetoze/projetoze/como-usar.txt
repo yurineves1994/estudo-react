@@ -1,0 +1,5 @@
+## PASSO 01 - digite "npm install"
+
+## PASSO 02 - abra dois consoles, no primeiro digite "npm run server" para rodar o json-server na porta 3000, 
+## no segundo console digite "npm start" para iniciar a aplicação na porta 3001.
+

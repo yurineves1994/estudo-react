@@ -20,9 +20,8 @@ export const TitleColorContextProvider = ({ children }) => {
 
     console.log('o estado atualmente é:', state)
 
-    return (
-        <TitleColorContext.Provider value={{ ...state, dispatch }}>
-            {children}
-        </TitleColorContext.Provider>
-    )
+    return <TitleColorContext.Provider value={{ ...state, dispatch }}>
+        {children}
+    </TitleColorContext.Provider>
+
 }

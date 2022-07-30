@@ -1,0 +1,22 @@
+{
+  "login": [
+    {
+      "id": 1,
+      "name": "Yuri Neves",
+      "login": "yurineves@gmail.com",
+      "password": "yuri1234"
+    },
+    {
+      "id": 2,
+      "name": "José Pereira",
+      "login": "josedamz@mzgruop.com",
+      "password": "jose1234"
+    },
+    {
+      "id": 3,
+      "name": "ADMIN",
+      "login": "adm@adm.com",
+      "password": "adm123"
+    }
+  ]
+}
