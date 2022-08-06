@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
-import styles from './Search.modules.css'
+import styles from './Search.module.css'
 
 import PostDetails from '../../components/PostDetails'
 //hooks
@@ -11,11 +11,12 @@ import { useQuery } from '../../hooks/useQuery';
 const Search = () => {
     const query = useQuery();
     const search = query.get("q")
+    console.log(query, search)
 
-    const {search: posts} = useFetchDocuments('posts', search)
+    const { documents: posts } = useFetchDocuments('posts', search)
+    console.log(posts)
 
-    return 
-    <div className={styles.search_container}>
+    return <div className={styles.search_container}>
         <h2>Search</h2>
         <div>
             {posts && posts.length === 0 && (

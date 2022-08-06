@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { db } from "../firebase/config";
 import {
-    collection,
+  collection,
   doc, getDoc
 } from "firebase/firestore";
 
@@ -40,11 +40,9 @@ export const useFetchDocument = (docCollection, id) => {
     loadDocument();
   }, [docCollection, id, cancelled]);
 
-  console.log(documents);
-
   useEffect(() => {
     return () => setCancelled(true);
   }, []);
 
-  return { document , loading, error };
+  return { document, loading, error };
 };
