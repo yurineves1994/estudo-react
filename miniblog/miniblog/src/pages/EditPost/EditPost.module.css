@@ -10,3 +10,15 @@
     color: #aaa;
     margin-bottom: 2em;
 }
+
+.edit_post .preview_title {
+margin-bottom: 1.2em;
+color: black;
+font-weight: bold;
+
+}
+
+.image_preview {
+ max-width: 100%;
+ margin-bottom: 2em;
+}
